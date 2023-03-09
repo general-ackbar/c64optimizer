@@ -63,15 +63,10 @@ int main(int argc, char * argv[]) {
         int maxColors = 4;
         enum Gravity gravity = Center;
 
-
-        //input, output, verbose, fit image, help, dither, max colors
-        
+            
 
         int opt;
         opterr = 0;
-
-        
-        
         while ((opt = getopt (argc, argv, "i:o:v:hdrfc:a:")) != -1)
             switch (opt)
         {
@@ -124,7 +119,9 @@ int main(int argc, char * argv[]) {
         
         if(!inputFile)
         {
-            printf("Usage: c64optimizer -i <file> [-h][-o][-f][-c][-d][-v].\n");
+            printf("Error: no inpout file!\n");
+            printf("Usage: c64optimizer -i <file> <options>\n");
+            printf("use -h to see all options.\n");
             return 1;
         }
         if(![[NSFileManager defaultManager] fileExistsAtPath:inputFile])
