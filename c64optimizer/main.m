@@ -158,7 +158,7 @@ int main(int argc, char * argv[]) {
         
         if(resizeOutput)
         {
-            float ratio = width/height;
+            float ratio = (float)width/(float)height;
             int newWidth = 320;
             int newHeight = newWidth / ratio;
             NSSize desiredSize = NSMakeSize(newWidth, newHeight);
